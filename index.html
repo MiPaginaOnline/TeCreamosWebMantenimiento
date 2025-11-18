@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeCreamosWeb+ | Sitio en Construcción</title>
+    
+    <!-- SEO y Metadatos del código 2 -->
+    <meta name="description" content="TeCreamosWeb - Tu creador de páginas web. Diseñamos páginas web profesionales, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta name="keywords" content="Páginas web, redes sociales, asesoramiento digital, marketing online">
+    <meta name="author" content="TeCreamosWeb">
+    <!-- Meta tags para Google -->
+    <meta itemprop="name" content="TeCreamosWeb+">
+    <meta itemprop="description" content="TeCreamosWeb - Tu creador de páginas web. Diseñamos páginas web, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta itemprop="image" content="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png">
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TeCreamosWeb+">
+    <meta property="og:description" content="Diseñamos páginas web, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta property="og:image" content="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png">
+    <meta property="og:image:width" content="500">
+    <meta property="og:image:height" content="500">
+    <meta property="og:url" content="https://tecreamosweb.es">
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="TeCreamosWeb+">
+    <meta property="twitter:description" content="Diseñamos páginas web, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta property="twitter:image" content="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png">
+    <!-- Verificación Google -->
+    <meta name="google-site-verification" content="zcqWNXO5PxwuhC8eUUWnLJH8WTvc4ASWszyT6URT9AM" />
+    <!-- Favicon -->
+    <link rel="icon" href="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png" type="image/png" sizes="64x64">
+    <!-- Color del tema para móviles -->
+    <meta name="theme-color" content="#0a3a4a">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema.org para Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "TeCreamosWeb",
+        "url": "https://tecreamosweb.es",
+        "logo": "https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png",
+        "description": "Tu creador de páginas web",
+        "sameAs": [
+            "https://www.tiktok.com/@tecreamos.web",
+            "https://www.instagram.com/tecreamos.web/"
+        ]
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        :root {
+            --primary: #00f5ff;
+            --primary-dark: #00b8cc;
+            --secondary: #7c3aed;
+            --accent: #ff0080;
+            --construction: #f59e0b;
+            --construction-dark: #d97706;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light: #f0f8ff;
+            --gray: #8a9ba8;
+            --neon-glow: 0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary);
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: var(--light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .tech-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            z-index: -3;
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            opacity: 0.3;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        /* Objetos de fondo permanentes (colores suaves) */
+        .background-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .bg-element {
+            position: absolute;
+            opacity: 0.1;
+            background: rgba(0, 245, 255, 0.05);
+            border: 1px solid rgba(0, 245, 255, 0.1);
+        }
+
+        .bg-rectangle {
+            width: 120px;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        .bg-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .bg-triangle {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 70px solid rgba(124, 58, 237, 0.05);
+            background: transparent;
+        }
+
+        .bg-hexagon {
+            width: 80px;
+            height: 46px;
+            background: rgba(255, 0, 128, 0.03);
+            position: relative;
+        }
+
+        .bg-hexagon:before,
+        .bg-hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+        }
+
+        .bg-hexagon:before {
+            bottom: 100%;
+            border-bottom: 23px solid rgba(255, 0, 128, 0.03);
+        }
+
+        .bg-hexagon:after {
+            top: 100%;
+            border-top: 23px solid rgba(255, 0, 128, 0.03);
+        }
+
+        /* Posicionar elementos de fondo permanentes */
+        .bg-element:nth-child(1) { top: 15%; left: 5%; }
+        .bg-element:nth-child(2) { top: 25%; right: 8%; }
+        .bg-element:nth-child(3) { top: 60%; left: 12%; }
+        .bg-element:nth-child(4) { top: 45%; right: 15%; }
+        .bg-element:nth-child(5) { top: 75%; right: 5%; }
+        .bg-element:nth-child(6) { top: 35%; left: 20%; }
+        .bg-element:nth-child(7) { top: 55%; right: 25%; }
+        .bg-element:nth-child(8) { top: 20%; left: 35%; }
+        .bg-element:nth-child(9) { top: 65%; left: 30%; }
+        .bg-element:nth-child(10) { top: 40%; right: 35%; }
+
+        /* Trabajadores animados */
+        .construction-workers {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            z-index: -1;
+        }
+
+        .worker {
+            position: absolute;
+            bottom: 0;
+            animation: workerWalk 15s linear infinite;
+        }
+
+        .worker-1 {
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .worker-2 {
+            left: -100px;
+            animation-delay: 5s;
+        }
+
+        .worker-3 {
+            left: -100px;
+            animation-delay: 10s;
+        }
+
+        .worker-body {
+            width: 40px;
+            height: 60px;
+            position: relative;
+        }
+
+        .worker-head {
+            width: 25px;
+            height: 25px;
+            background: #fbbf24;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 7.5px;
+        }
+
+        .worker-hardhat {
+            width: 30px;
+            height: 15px;
+            background: var(--construction);
+            border-radius: 5px 5px 0 0;
+            position: absolute;
+            top: -5px;
+            left: 5px;
+            animation: hardhatBob 2s ease-in-out infinite;
+        }
+
+        .worker-torso {
+            width: 30px;
+            height: 25px;
+            background: #dc2626;
+            position: absolute;
+            top: 25px;
+            left: 5px;
+            border-radius: 5px;
+        }
+
+        .worker-leg {
+            width: 10px;
+            height: 30px;
+            background: #1e40af;
+            position: absolute;
+            bottom: 0;
+            animation: legWalk 0.5s ease-in-out infinite alternate;
+        }
+
+        .worker-leg.left {
+            left: 8px;
+            animation-delay: 0s;
+        }
+
+        .worker-leg.right {
+            right: 8px;
+            animation-delay: 0.25s;
+        }
+
+        @keyframes workerWalk {
+            0% { transform: translateX(-100px); }
+            100% { transform: translateX(calc(100vw + 100px)); }
+        }
+
+        @keyframes legWalk {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-5px) rotate(10deg); }
+        }
+
+        @keyframes hardhatBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        /* Vehículos de construcción */
+        .construction-vehicles {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            z-index: -1;
+        }
+
+        .vehicle {
+            position: absolute;
+            bottom: 0;
+            animation: vehicleDrive 25s linear infinite;
+        }
+
+        .bulldozer {
+            width: 120px;
+            height: 60px;
+            background: #dc2626;
+            border-radius: 10px 10px 0 0;
+            animation-delay: 0s;
+        }
+
+        .bulldozer-blade {
+            width: 130px;
+            height: 20px;
+            background: #6b7280;
+            position: absolute;
+            bottom: 0;
+            left: -10px;
+            border-radius: 5px;
+            animation: bladeMove 3s ease-in-out infinite;
+        }
+
+        .cement-mixer {
+            width: 100px;
+            height: 70px;
+            background: #1e40af;
+            border-radius: 10px;
+            animation-delay: 8s;
+        }
+
+        .mixer-drum {
+            width: 60px;
+            height: 60px;
+            background: #374151;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            animation: drumSpin 4s linear infinite;
+        }
+
+        /* Nuevos vehículos adicionales */
+        .excavator {
+            width: 100px;
+            height: 80px;
+            background: #dc2626;
+            border-radius: 10px;
+            animation-delay: 15s;
+        }
+
+        .excavator-arm {
+            width: 80px;
+            height: 15px;
+            background: #6b7280;
+            position: absolute;
+            top: 20px;
+            right: -70px;
+            transform-origin: left center;
+            animation: excavatorArm 6s ease-in-out infinite;
+        }
+
+        .truck {
+            width: 150px;
+            height: 50px;
+            background: #1e40af;
+            border-radius: 10px 10px 0 0;
+            animation-delay: 20s;
+        }
+
+        .truck-container {
+            width: 120px;
+            height: 30px;
+            background: #374151;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            border-radius: 5px;
+        }
+
+        @keyframes vehicleDrive {
+            0% { transform: translateX(-200px); }
+            100% { transform: translateX(calc(100vw + 200px)); }
+        }
+
+        @keyframes bladeMove {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        @keyframes drumSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes excavatorArm {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(20deg); }
+        }
+
+        /* Barreras y conos animados */
+        .safety-elements {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            z-index: -1;
+        }
+
+        .safety-element {
+            position: absolute;
+            bottom: 0;
+            animation: safetyBlink 2s ease-in-out infinite;
+        }
+
+        .safety-barrier {
+            width: 100px;
+            height: 20px;
+            background: repeating-linear-gradient(
+                45deg,
+                var(--construction),
+                var(--construction) 10px,
+                #000 10px,
+                #000 20px
+            );
+        }
+
+        .safety-cone {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 30px solid var(--construction);
+            animation: coneBlink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes safetyBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes coneBlink {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Posicionar elementos de seguridad */
+        .safety-element:nth-child(1) { left: 10%; }
+        .safety-element:nth-child(2) { left: 30%; }
+        .safety-element:nth-child(3) { left: 50%; }
+        .safety-element:nth-child(4) { left: 70%; }
+        .safety-element:nth-child(5) { left: 90%; }
+
+        /* Herramientas flotantes */
+        .floating-tools {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .tool {
+            position: absolute;
+            animation: toolFloat 20s linear infinite;
+            color: var(--construction);
+            font-size: 1.5rem;
+        }
+
+        .tool:nth-child(1) { top: 20%; animation-delay: 0s; }
+        .tool:nth-child(2) { top: 30%; animation-delay: -4s; }
+        .tool:nth-child(3) { top: 40%; animation-delay: -8s; }
+        .tool:nth-child(4) { top: 50%; animation-delay: -12s; }
+        .tool:nth-child(5) { top: 60%; animation-delay: -16s; }
+        .tool:nth-child(6) { top: 25%; animation-delay: -2s; }
+        .tool:nth-child(7) { top: 45%; animation-delay: -6s; }
+        .tool:nth-child(8) { top: 65%; animation-delay: -10s; }
+
+        @keyframes toolFloat {
+            0% { transform: translateX(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateX(calc(100vw + 100px)) rotate(360deg); opacity: 0; }
+        }
+
+        /* Materiales de construcción flotantes */
+        .floating-materials {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .material {
+            position: absolute;
+            animation: materialFloat 25s linear infinite;
+        }
+
+        .brick {
+            width: 25px;
+            height: 12px;
+            background: #dc2626;
+            animation: materialFloat 30s linear infinite, brickRotate 8s linear infinite;
+        }
+
+        .beam {
+            width: 40px;
+            height: 8px;
+            background: #6b7280;
+            animation: materialFloat 35s linear infinite;
+        }
+
+        .pipe {
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: 3px solid #9ca3af;
+            border-radius: 50%;
+            animation: materialFloat 28s linear infinite, pipeRotate 6s linear infinite;
+        }
+
+        @keyframes materialFloat {
+            0% { transform: translateX(-150px) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateX(calc(100vw + 150px)) translateY(-50px); opacity: 0; }
+        }
+
+        @keyframes brickRotate {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+        }
+
+        @keyframes pipeRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Posicionar materiales */
+        .material:nth-child(1) { top: 15%; animation-delay: 0s; }
+        .material:nth-child(2) { top: 35%; animation-delay: -5s; }
+        .material:nth-child(3) { top: 55%; animation-delay: -10s; }
+        .material:nth-child(4) { top: 25%; animation-delay: -15s; }
+        .material:nth-child(5) { top: 45%; animation-delay: -20s; }
+
+        /* Grúas mejoradas */
+        .tech-crane {
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.8;
+        }
+
+        .crane-1 {
+            right: 10%;
+            width: 200px;
+            height: 300px;
+        }
+
+        .crane-2 {
+            left: 5%;
+            width: 150px;
+            height: 250px;
+            opacity: 0.6;
+        }
+
+        .crane-tower {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 250px;
+            background: linear-gradient(to top, #4b5563, #6b7280);
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        }
+
+        .crane-2 .crane-tower {
+            height: 200px;
+        }
+
+        .crane-arm {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            width: 150px;
+            height: 12px;
+            background: linear-gradient(90deg, #6b7280, #9ca3af);
+            transform-origin: left center;
+            animation: craneMove 8s infinite alternate;
+            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+        }
+
+        .crane-2 .crane-arm {
+            width: 120px;
+            animation: craneMove2 10s infinite alternate;
+        }
+
+        .crane-cabin {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 35px;
+            height: 25px;
+            background: #374151;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+        }
+
+        .crane-hook {
+            position: absolute;
+            right: -10px;
+            bottom: -30px;
+            width: 18px;
+            height: 35px;
+            background: #9ca3af;
+            border-radius: 10px;
+            animation: hookSwing 4s infinite ease-in-out;
+            box-shadow: 0 0 10px var(--construction);
+        }
+
+        .cable {
+            position: absolute;
+            right: 0;
+            bottom: -30px;
+            width: 2px;
+            height: 30px;
+            background: #6b7280;
+            transform-origin: top center;
+            animation: cableSwing 4s infinite ease-in-out;
+        }
+
+        @keyframes craneMove {
+            0% { transform: rotate(-30deg); }
+            100% { transform: rotate(30deg); }
+        }
+
+        @keyframes craneMove2 {
+            0% { transform: rotate(10deg); }
+            100% { transform: rotate(-10deg); }
+        }
+
+        @keyframes hookSwing {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(10px) rotate(5deg); }
+        }
+
+        @keyframes cableSwing {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            text-align: center;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .logo {
+            margin-bottom: 3rem;
+        }
+
+        .logo h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #a5f3fc, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+            letter-spacing: -1px;
+        }
+
+        .logo .plus {
+            color: #c084fc;
+            font-size: 4.5rem;
+            vertical-align: super;
+            text-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(0, 245, 255, 0.1);
+            border: 1px solid var(--primary);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            color: var(--primary);
+            box-shadow: var(--neon-glow);
+            animation: statusPulse 3s infinite;
+        }
+
+        @keyframes statusPulse {
+            0%, 100% { box-shadow: 0 0 10px var(--primary); }
+            50% { box-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary); }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--light), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Laptop con cinta de obra - MEJORADO CON MÁS ELEMENTOS */
+        .laptop-container {
+            position: relative;
+            width: 700px;
+            max-width: 90%;
+            margin: 0 auto 4rem;
+        }
+
+        .laptop {
+            width: 100%;
+            height: 400px;
+            background: #374151;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--primary);
+        }
+
+        .laptop-screen {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            background: #1e293b;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .construction-tape {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: var(--construction);
+            transform: translateY(-50%) rotate(-5deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .tape-text {
+            color: #000;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            white-space: nowrap;
+            animation: tapeMove 10s linear infinite;
+        }
+
+        /* Diseño de construcción expandido por toda la pantalla */
+        .construction-design {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .blueprint-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+            background-size: 25px 25px;
+            opacity: 0.4;
+        }
+
+        .construction-element {
+            background: rgba(0, 245, 255, 0.1);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            animation: elementPulse 4s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .construction-element::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 245, 255, 0.2), transparent);
+            animation: elementShine 3s ease-in-out infinite;
+        }
+
+        /* Elementos específicos con diferentes animaciones */
+        .element-1 { animation-delay: 0s; }
+        .element-2 { animation-delay: 0.5s; }
+        .element-3 { animation-delay: 1s; }
+        .element-4 { animation-delay: 1.5s; }
+        .element-5 { animation-delay: 0.2s; }
+        .element-6 { animation-delay: 0.7s; }
+        .element-7 { animation-delay: 1.2s; }
+        .element-8 { animation-delay: 1.7s; }
+        .element-9 { animation-delay: 0.4s; }
+        .element-10 { animation-delay: 0.9s; }
+        .element-11 { animation-delay: 1.4s; }
+        .element-12 { animation-delay: 1.9s; }
+
+        /* Líneas de conexión entre elementos */
+        .connection-line {
+            position: absolute;
+            background: rgba(0, 245, 255, 0.3);
+            height: 2px;
+            transform-origin: left center;
+            animation: linePulse 2s ease-in-out infinite;
+        }
+
+        .line-1 { top: 25%; left: 25%; width: 25%; animation-delay: 0s; }
+        .line-2 { top: 25%; left: 50%; width: 25%; animation-delay: 0.3s; }
+        .line-3 { top: 50%; left: 25%; width: 25%; animation-delay: 0.6s; }
+        .line-4 { top: 50%; left: 50%; width: 25%; animation-delay: 0.9s; }
+        .line-5 { top: 75%; left: 25%; width: 25%; animation-delay: 1.2s; }
+        .line-6 { top: 75%; left: 50%; width: 25%; animation-delay: 1.5s; }
+
+        /* Puntos de conexión */
+        .connection-point {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pointPulse 1.5s ease-in-out infinite;
+        }
+
+        .point-1 { top: 25%; left: 25%; animation-delay: 0s; }
+        .point-2 { top: 25%; left: 50%; animation-delay: 0.2s; }
+        .point-3 { top: 25%; left: 75%; animation-delay: 0.4s; }
+        .point-4 { top: 50%; left: 25%; animation-delay: 0.6s; }
+        .point-5 { top: 50%; left: 50%; animation-delay: 0.8s; }
+        .point-6 { top: 50%; left: 75%; animation-delay: 1s; }
+        .point-7 { top: 75%; left: 25%; animation-delay: 1.2s; }
+        .point-8 { top: 75%; left: 50%; animation-delay: 1.4s; }
+        .point-9 { top: 75%; left: 75%; animation-delay: 1.6s; }
+
+        @keyframes elementPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; box-shadow: 0 0 10px rgba(0, 245, 255, 0.3); }
+            50% { transform: scale(1.05); opacity: 1; box-shadow: 0 0 20px rgba(0, 245, 255, 0.5); }
+        }
+
+        @keyframes elementShine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes linePulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes pointPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+
+        @keyframes tapeMove {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .laptop-base {
+            width: 750px;
+            max-width: 110%;
+            height: 25px;
+            background: linear-gradient(to bottom, #6b7280, #4b5563);
+            border-radius: 5px 5px 10px 10px;
+            margin: 0 auto;
+            position: relative;
+            left: -5%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .countdown-tech {
+            background: rgba(10, 15, 30, 0.8);
+            border: 2px solid var(--secondary);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem auto;
+            max-width: 800px;
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .countdown-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            color: var(--light);
+        }
+
+        .tech-countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid var(--secondary);
+            border-radius: 15px;
+            padding: 2rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-unit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 245, 255, 0.1), transparent);
+            transform: translateX(-100%);
+        }
+
+        .countdown-unit:hover::before {
+            animation: shine 1s;
+        }
+
+        @keyframes shine {
+            100% { transform: translateX(100%); }
+        }
+
+        .countdown-unit:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(0, 245, 255, 0.3);
+        }
+
+        .unit-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Courier New', monospace;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        .unit-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-tech {
+            background: rgba(10, 15, 30, 0.8);
+            border: 2px solid var(--construction);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 3rem auto;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-tech h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--gray);
+        }
+
+        .contact-link {
+            color: var(--construction);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        .contact-link:hover {
+            color: var(--primary);
+        }
+
+        .social-tech {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 245, 255, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .social-link:hover {
+            background: rgba(0, 245, 255, 0.4);
+            transform: translateY(-5px) scale(1.1);
+            color: var(--construction);
+            border-color: var(--construction);
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding: 2rem;
+            color: var(--gray);
+            text-align: center;
+            width: 100%;
+            border-top: 1px solid rgba(0, 245, 255, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2.5rem;
+            }
+
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .tech-countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .construction-workers,
+            .construction-vehicles,
+            .floating-tools,
+            .floating-materials {
+                display: none;
+            }
+
+            .tape-text {
+                font-size: 1.8rem;
+            }
+
+            .construction-design {
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(4, 1fr);
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .construction-element {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .logo h1 {
+                font-size: 2rem;
+            }
+
+            .main-title {
+                font-size: 1.8rem;
+            }
+
+            .tech-countdown {
+                grid-template-columns: 1fr;
+            }
+
+            .tape-text {
+                font-size: 1.2rem;
+            }
+
+            .construction-design {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                gap: 8px;
+                padding: 10px;
+            }
+
+            .construction-element {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tech-bg"></div>
+    <div class="grid-overlay"></div>
+    
+    <!-- Elementos de fondo permanentes (colores suaves) -->
+    <div class="background-elements">
+        <div class="bg-element bg-rectangle"></div>
+        <div class="bg-element bg-circle"></div>
+        <div class="bg-element bg-triangle"></div>
+        <div class="bg-element bg-hexagon"></div>
+        <div class="bg-element bg-rectangle"></div>
+        <div class="bg-element bg-circle"></div>
+        <div class="bg-element bg-triangle"></div>
+        <div class="bg-element bg-hexagon"></div>
+        <div class="bg-element bg-rectangle"></div>
+        <div class="bg-element bg-circle"></div>
+    </div>
+    
+    <!-- Trabajadores caminando -->
+    <div class="construction-workers">
+        <div class="worker worker-1">
+            <div class="worker-body">
+                <div class="worker-head"></div>
+                <div class="worker-hardhat"></div>
+                <div class="worker-torso"></div>
+                <div class="worker-leg left"></div>
+                <div class="worker-leg right"></div>
+            </div>
+        </div>
+        <div class="worker worker-2">
+            <div class="worker-body">
+                <div class="worker-head"></div>
+                <div class="worker-hardhat"></div>
+                <div class="worker-torso"></div>
+                <div class="worker-leg left"></div>
+                <div class="worker-leg right"></div>
+            </div>
+        </div>
+        <div class="worker worker-3">
+            <div class="worker-body">
+                <div class="worker-head"></div>
+                <div class="worker-hardhat"></div>
+                <div class="worker-torso"></div>
+                <div class="worker-leg left"></div>
+                <div class="worker-leg right"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Vehículos de construcción -->
+    <div class="construction-vehicles">
+        <div class="vehicle bulldozer">
+            <div class="bulldozer-blade"></div>
+        </div>
+        <div class="vehicle cement-mixer">
+            <div class="mixer-drum"></div>
+        </div>
+        <div class="vehicle excavator">
+            <div class="excavator-arm"></div>
+        </div>
+        <div class="vehicle truck">
+            <div class="truck-container"></div>
+        </div>
+    </div>
+    
+    <!-- Elementos de seguridad -->
+    <div class="safety-elements">
+        <div class="safety-element safety-barrier"></div>
+        <div class="safety-element safety-cone"></div>
+        <div class="safety-element safety-barrier"></div>
+        <div class="safety-element safety-cone"></div>
+        <div class="safety-element safety-barrier"></div>
+    </div>
+    
+    <!-- Herramientas flotantes -->
+    <div class="floating-tools">
+        <div class="tool"><i class="fas fa-hammer"></i></div>
+        <div class="tool"><i class="fas fa-wrench"></i></div>
+        <div class="tool"><i class="fas fa-screwdriver"></i></div>
+        <div class="tool"><i class="fas fa-toolbox"></i></div>
+        <div class="tool"><i class="fas fa-tools"></i></div>
+        <div class="tool"><i class="fas fa-hard-hat"></i></div>
+        <div class="tool"><i class="fas fa-tape"></i></div>
+        <div class="tool"><i class="fas fa-ruler"></i></div>
+    </div>
+    
+    <!-- Materiales de construcción flotantes -->
+    <div class="floating-materials">
+        <div class="material brick"></div>
+        <div class="material beam"></div>
+        <div class="material pipe"></div>
+        <div class="material brick"></div>
+        <div class="material beam"></div>
+    </div>
+    
+    <!-- Grúas tecnológicas -->
+    <div class="tech-crane crane-1">
+        <div class="crane-tower"></div>
+        <div class="crane-arm"></div>
+        <div class="crane-cabin"></div>
+        <div class="cable"></div>
+        <div class="crane-hook"></div>
+    </div>
+    
+    <div class="tech-crane crane-2">
+        <div class="crane-tower"></div>
+        <div class="crane-arm"></div>
+        <div class="crane-cabin"></div>
+        <div class="cable"></div>
+        <div class="crane-hook"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <h1>TeCreamosWeb<span class="plus">+</span></h1>
+        </div>
+
+        <div class="status-indicator">
+            <i class="fas fa-hard-hat"></i>
+            MANTENIMIENTO EN PROGRESO
+        </div>
+
+        <h1 class="main-title">Página Web en mantenimiento</h1>
+        
+        <p class="subtitle">
+            Nuestro equipo está trabajando para nuevos servicios y garantir una mejor calidad a nuestros clientes.
+        </p>
+
+        <!-- Laptop con cinta de obra MEJORADO CON MÁS ELEMENTOS -->
+        <div class="laptop-container">
+            <div class="laptop">
+                <div class="laptop-screen">
+                    <!-- Cinta de obra (se mantiene) -->
+                    <div class="construction-tape">
+                        <div class="tape-text">PAGINA WEB EN MANTENIMIENTO • PAGINA WEB EN MANTENIMIENTO •</div>
+                    </div>
+                    
+                    <!-- Grid de plano técnico -->
+                    <div class="blueprint-grid"></div>
+                    
+                    <!-- Líneas de conexión -->
+                    <div class="connection-line line-1"></div>
+                    <div class="connection-line line-2"></div>
+                    <div class="connection-line line-3"></div>
+                    <div class="connection-line line-4"></div>
+                    <div class="connection-line line-5"></div>
+                    <div class="connection-line line-6"></div>
+                    
+                    <!-- Puntos de conexión -->
+                    <div class="connection-point point-1"></div>
+                    <div class="connection-point point-2"></div>
+                    <div class="connection-point point-3"></div>
+                    <div class="connection-point point-4"></div>
+                    <div class="connection-point point-5"></div>
+                    <div class="connection-point point-6"></div>
+                    <div class="connection-point point-7"></div>
+                    <div class="connection-point point-8"></div>
+                    <div class="connection-point point-9"></div>
+                    
+                    <!-- Diseño de construcción expandido por toda la pantalla -->
+                    <div class="construction-design">
+                        <div class="construction-element element-1"><i class="fas fa-cube"></i></div>
+                        <div class="construction-element element-2"><i class="fas fa-layer-group"></i></div>
+                        <div class="construction-element element-3"><i class="fas fa-project-diagram"></i></div>
+                        <div class="construction-element element-4"><i class="fas fa-microchip"></i></div>
+                        <div class="construction-element element-5"><i class="fas fa-server"></i></div>
+                        <div class="construction-element element-6"><i class="fas fa-code"></i></div>
+                        <div class="construction-element element-7"><i class="fas fa-database"></i></div>
+                        <div class="construction-element element-8"><i class="fas fa-network-wired"></i></div>
+                        <div class="construction-element element-9"><i class="fas fa-shield-alt"></i></div>
+                        <div class="construction-element element-10"><i class="fas fa-bolt"></i></div>
+                        <div class="construction-element element-11"><i class="fas fa-cloud"></i></div>
+                        <div class="construction-element element-12"><i class="fas fa-rocket"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="laptop-base"></div>
+        </div>
+
+        <div class="countdown-tech">
+            <h2 class="countdown-title">Volvemos a abrir el 2 de enero de 2026 a las 12:00</h2>
+            <div class="tech-countdown">
+                <div class="countdown-unit">
+                    <div class="unit-number" id="days">00</div>
+                    <div class="unit-label">Días</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="hours">00</div>
+                    <div class="unit-label">Horas</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="minutes">00</div>
+                    <div class="unit-label">Minutos</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="seconds">00</div>
+                    <div class="unit-label">Segundos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-tech">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:tecreamosweb@gmail.com" class="contact-link">tecreamosweb@gmail.com</a>
+                </div>
+                <p style="margin-top: 1rem; color: var(--gray); text-align: center;">
+                    Para consultas urgentes durante el proceso de mantenimiento
+                </p>
+            </div>
+        </div>
+
+        <div class="social-tech">
+            <a href="https://www.instagram.com/tecreamos.web/" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+    </footer>
+
+    <script>
+        // Contador regresivo ACTIVADO para GitHub - 2026
+        function updateCountdown() {
+            // Fecha objetivo: 2 de enero de 2026 a las 12:00
+            const targetDate = new Date('2026-01-02T12:00:00');
+            const now = new Date();
+            const timeLeft = targetDate - now;
+            
+            // Si ya pasó la fecha, mostrar ceros
+            if (timeLeft < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                
+                // Cambiar el mensaje si ya pasó la fecha
+                document.querySelector('.countdown-title').textContent = '¡Ya estamos de vuelta!';
+                return;
+            }
+            
+            // Calcular días, horas, minutos y segundos
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Actualizar el contador en la página
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Iniciar el contador inmediatamente
+        updateCountdown();
+        
+        // Actualizar cada segundo
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Para GitHub Pages - asegurar que el script funcione correctamente
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página de mantenimiento cargada correctamente');
+            console.log('Contador 2026 activado para GitHub Pages');
+        });
+    </script>
+</body>
+</html>
