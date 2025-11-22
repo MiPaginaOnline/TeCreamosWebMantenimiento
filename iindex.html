@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeCreamosWeb+ | Actualización de Sistema</title>
+    
+    <meta name="description" content="TeCreamosWeb - Tu creador de páginas web. Diseñamos páginas web profesionales, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta name="keywords" content="Páginas web, redes sociales, asesoramiento digital, marketing online">
+    <meta name="author" content="TeCreamosWeb">
+    <meta property="og:title" content="TeCreamosWeb+">
+    <meta property="og:description" content="Diseñamos páginas web, redes sociales y asesoramiento digital para que tu negocio crezca online.">
+    <meta property="og:image" content="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png">
+    <link rel="icon" href="https://tecreamosweb.es/Foto%20perfil%20(5)-modified.png" type="image/png" sizes="64x64">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* -------------------------------------- */
+        /* 1. Variables y Reset */
+        /* -------------------------------------- */
+        :root {
+            --background: #0D1117; /* GitHub Dark Theme Background */
+            --text-primary: #E6EDF3;
+            --text-secondary: #8B949E; /* Gris sutil */
+            --brand-color: #58A6FF;   /* Azul limpio y profesional */
+            --brand-hover: #79C0FF;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --error-color: #F85149;
+            --padding-unit: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            /* ** CAMBIO CLAVE: Sin scroll para pantalla completa ** */
+            height: 100vh;
+            overflow: hidden; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--padding-unit);
+            
+            /* Efecto de rejilla tecnológica */
+            background-image: 
+                linear-gradient(rgba(88, 166, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88, 166, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* -------------------------------------- */
+        /* 2. Estructura y Contenedor */
+        /* -------------------------------------- */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Permite que el contenedor se estire para centrar */
+            max-height: calc(100vh - 4rem); 
+        }
+
+        /* -------------------------------------- */
+        /* 3. Títulos y Estado */
+        /* -------------------------------------- */
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            margin-bottom: 0.25rem;
+        }
+
+        .logo .plus {
+            color: var(--brand-color);
+            font-size: 3rem;
+            vertical-align: super;
+        }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            /* Cambio de color para un estilo más de 'Advertencia' */
+            background: rgba(248, 81, 73, 0.1); 
+            border: 1px solid var(--error-color);
+            border-radius: 6px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--error-color);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Icono de Construcción/Desarrollo */
+        .status-indicator i {
+             /* Icono de andamio o plano */
+            font-size: 1.1rem;
+        }
+
+        .main-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 550px;
+            margin: 0 auto 2rem;
+        }
+
+        /* -------------------------------------- */
+        /* 4. Contador Compacto y Profesional */
+        /* -------------------------------------- */
+        .countdown-tech {
+            background: rgba(255, 255, 255, 0.03); 
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .countdown-title {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .tech-countdown {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+
+        .countdown-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .unit-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--brand-color);
+            line-height: 1;
+        }
+
+        .unit-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+        
+        .scheduled-return {
+            margin-top: 1rem;
+            color: var(--text-secondary); 
+            font-size: 0.8rem;
+        }
+
+
+        /* -------------------------------------- */
+        /* 5. Contacto y Social Compacto */
+        /* -------------------------------------- */
+        .contact-tech {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info .fas {
+            color: var(--brand-color); 
+            font-size: 1.1rem;
+        }
+
+        .contact-link {
+            color: var(--brand-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--brand-hover);
+        }
+
+        .social-tech {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: var(--brand-color);
+        }
+
+        /* -------------------------------------- */
+        /* 6. Responsive (Asegurar que quepa en móviles) */
+        /* -------------------------------------- */
+        @media (max-width: 600px) {
+            body {
+                /* Reducir padding en móvil */
+                padding: 1rem;
+                overflow-y: auto; /* Permitir un ligero scroll si el contenido es demasiado grande */
+            }
+            .logo h1 { font-size: 2rem; }
+            .logo .plus { font-size: 2.5rem; }
+            .main-title { font-size: 1.6rem; }
+            .subtitle { font-size: 0.9rem; margin-bottom: 1.5rem; }
+            .countdown-tech { padding: 1rem; max-width: 90%; }
+            .unit-number { font-size: 2rem; }
+            .unit-label { font-size: 0.65rem; }
+            .scheduled-return { font-size: 0.75rem; margin-top: 0.75rem; }
+            .contact-link { font-size: 0.9rem; }
+            .social-link { font-size: 1.2rem; }
+            .contact-info { flex-direction: column; gap: 0.25rem; }
+            .contact-info .fas { margin-bottom: 0; }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>TeCreamosWeb<span class="plus">+</span></h1>
+        </div>
+
+        <div class="status-indicator">
+            <i class="fas fa-hammer"></i>
+            CONSTRUCCIÓN EN CURSO
+        </div>
+
+        <h1 class="main-title">Reingeniería del Sistema para el Futuro Digital</h1>
+        
+        <p class="subtitle">
+            Estamos implementando una actualización crítica para optimizar el rendimiento y expandir nuestra oferta de servicios. Volveremos más rápidos y potentes.
+        </p>
+
+        <div class="countdown-tech">
+            <h2 class="countdown-title">Activación Programada</h2>
+            <div class="tech-countdown">
+                <div class="countdown-unit">
+                    <div class="unit-number" id="days">00</div>
+                    <div class="unit-label">DÍAS</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="hours">00</div>
+                    <div class="unit-label">HORAS</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="minutes">00</div>
+                    <div class="unit-label">MINUTOS</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="unit-number" id="seconds">00</div>
+                    <div class="unit-label">SEGS</div>
+                </div>
+            </div>
+            <p class="scheduled-return">
+                Apertura: 2 de enero de 2026 a las 12:00 CET.
+            </p>
+        </div>
+
+        <div class="contact-tech">
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:tecreamosweb@gmail.com" class="contact-link">tecreamosweb@gmail.com</a>
+            </div>
+        </div>
+
+        <div class="social-tech">
+            <a href="https://www.instagram.com/tecreamos.web/" class="social-link" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@tecreamos.web" class="social-link" title="TikTok">
+                <i class="fab fa-tiktok"></i> 
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Contador regresivo
+        function updateCountdown() {
+            // Fecha objetivo: 2 de enero de 2026 a las 12:00
+            const targetDate = new Date('2026-01-02T12:00:00');
+            const now = new Date();
+            const timeLeft = targetDate - now;
+            
+            // Función para añadir padding
+            const pad = (n) => n.toString().padStart(2, '0');
+            
+            // Si ya pasó la fecha, mostrar ceros
+            if (timeLeft < 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                
+                document.querySelector('.countdown-title').textContent = '¡Sistema Reactivado!';
+                document.querySelector('.status-indicator').innerHTML = '<i class="fas fa-check-circle"></i> ONLINE';
+                document.querySelector('.status-indicator').style.borderColor = 'var(--brand-color)';
+                document.querySelector('.status-indicator').style.color = 'var(--brand-color)';
+                document.querySelector('.status-indicator').style.background = 'rgba(88, 166, 255, 0.1)';
+                
+                clearInterval(countdownInterval); // Detener el intervalo
+                return;
+            }
+            
+            // Calcular días, horas, minutos y segundos
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            
+            // Actualizar el contador en la página
+            document.getElementById('days').textContent = pad(days);
+            document.getElementById('hours').textContent = pad(hours);
+            document.getElementById('minutes').textContent = pad(minutes);
+            document.getElementById('seconds').textContent = pad(seconds);
+        }
+        
+        // Iniciar y actualizar el contador
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+    </script>
+</body>
+</html>
